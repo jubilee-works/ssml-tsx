@@ -1,13 +1,11 @@
 {
   "compilerOptions": {
-    "target": "esnext",
     "module": "commonjs",
+    "target": "es2018",
+    "lib": ["es2018"],
     "moduleResolution": "node",
     "strict": true,
-    "skipLibCheck": true,
     "declaration": true,
-    "pretty": true,
-    "newLine": "lf",
     "outDir": "dist",
     "jsx": "react",
     "typeRoots": [

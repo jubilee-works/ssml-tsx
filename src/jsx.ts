@@ -2,7 +2,6 @@
 import { Element as _Element, Children } from "./Element";
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     type Element<P = any> = _Element<P>;
 
