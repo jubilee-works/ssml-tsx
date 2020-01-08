@@ -1,34 +1,36 @@
-import { Element as SSMLElement } from "./Element";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { Element as _Element, Children } from "./Element";
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
-    type Element<P = any> = SSMLElement<P>;
+    type Element<P = any> = _Element<P>;
 
-    type SSMLElementWithChildren<P> = P & {
-      children?: JSX.Element | string | number | boolean;
+    type ElementWithChildren<P> = P & {
+      children?: Children[];
     };
 
     type IntrinsicElements = {
       // https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html
 
-      "amazon:domain": SSMLElementWithChildren<{
+      "amazon:domain": ElementWithChildren<{
         name: "music" | "news";
       }>;
 
-      "amazon:effect": SSMLElementWithChildren<{
+      "amazon:effect": ElementWithChildren<{
         name: "whispered";
       }>;
 
-      "amazon:emotion": SSMLElementWithChildren<{
+      "amazon:emotion": ElementWithChildren<{
         name: "excited" | "disappointed";
         intensity: "low" | "medium" | "high";
       }>;
 
-      audio: SSMLElementWithChildren<{
+      audio: ElementWithChildren<{
         src: string;
       }>;
 
-      break: SSMLElementWithChildren<{
+      break: ElementWithChildren<{
         strength?:
           | "none"
           | "x-weak"
@@ -39,22 +41,22 @@ declare global {
         time?: string;
       }>;
 
-      emphasis: SSMLElementWithChildren<{
+      emphasis: ElementWithChildren<{
         level?: "strong" | "moderate" | "reduced";
       }>;
 
-      lang: SSMLElementWithChildren<{
+      lang: ElementWithChildren<{
         "xml:lang": string;
       }>;
 
-      p: SSMLElementWithChildren<{}>;
+      p: ElementWithChildren<{}>;
 
-      phoneme: SSMLElementWithChildren<{
+      phoneme: ElementWithChildren<{
         alphabet: "ipa" | "x-sampa";
         ph: string;
       }>;
 
-      prosody: SSMLElementWithChildren<{
+      prosody: ElementWithChildren<{
         rate?: "x-slow" | "slow" | "medium" | "fast" | "x-fast" | string;
         pitch?: "x-low" | "low" | "medium" | "high" | "x-high" | string;
         volume?:
@@ -67,9 +69,9 @@ declare global {
           | string;
       }>;
 
-      s: SSMLElementWithChildren<{}>;
+      s: ElementWithChildren<{}>;
 
-      "say-as": SSMLElementWithChildren<{
+      "say-as": ElementWithChildren<{
         "interpret-as":
           | "characters"
           | "spell-out"
@@ -99,17 +101,17 @@ declare global {
           | "y";
       }>;
 
-      speak: SSMLElementWithChildren<{}>;
+      speak: ElementWithChildren<{}>;
 
-      sub: SSMLElementWithChildren<{
+      sub: ElementWithChildren<{
         alias: string;
       }>;
 
-      voice: SSMLElementWithChildren<{
+      voice: ElementWithChildren<{
         name: string;
       }>;
 
-      w: SSMLElementWithChildren<{
+      w: ElementWithChildren<{
         role: "amazon:VB" | "amazon:VBD" | "amazon:NN" | "amazon:SENSE_1";
       }>;
     };

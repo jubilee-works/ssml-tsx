@@ -12,7 +12,7 @@ const ssml = <P>(
   type: Element<P>["type"],
   props: Element<P>["props"],
   ...children: Element<P>["children"]
-) => createElement<P>(type, props, ...children);
+): Element<P> => createElement<P>(type, props, ...children);
 ssml.renderToString = renderToString;
 ssml.createElement = createElement;
 

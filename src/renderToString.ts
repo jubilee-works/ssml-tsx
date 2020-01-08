@@ -1,4 +1,4 @@
-import { Element } from "./Element";
+import { Element, Children } from "./Element";
 
 const ranges = [
   "\ud83c[\udf00-\udfff]", // U+1F300 to U+1F3FF
@@ -6,30 +6,23 @@ const ranges = [
   "\ud83d[\ude80-\udeff]" // U+1F680 to U+1F6FF
 ] as const;
 
-const escape = (word: any) => {
-  if (typeof word === "string") {
-    return (
-      word
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&apos;")
-        // strip emojis
-        .replace(new RegExp(ranges.join("|"), "g"), "")
-    );
-  }
-  if (typeof word === "number") {
-    return word.toString();
-  }
-  if (typeof word === "boolean") {
-    return word.toString();
-  }
+const escape = (word: string | number | boolean): string => {
+  if (typeof word === "number") return word.toString();
+  if (typeof word === "boolean") return word.toString();
 
-  throw new Error("received invalid type " + typeof word);
+  return (
+    word
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;")
+      // strip emojis
+      .replace(new RegExp(ranges.join("|"), "g"), "")
+  );
 };
 
-const toAttr = <P>(props: Element<P>["props"]) =>
+const toAttr = <P>(props: Element<P>["props"]): string =>
   props
     ? " " +
       Object.entries(props)
@@ -37,7 +30,7 @@ const toAttr = <P>(props: Element<P>["props"]) =>
         .join(" ")
     : "";
 
-const render = (element: any | any[]): string => {
+const render = (element: Children | Children[] | null): string => {
   if (!element) return "";
 
   if (Array.isArray(element)) {

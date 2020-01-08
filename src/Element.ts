@@ -1,10 +1,12 @@
 import { renderToString } from "./renderToString";
 import { FunctionComponent } from "./Component";
 
+export type Children = Element<any> | string | number | boolean;
+
 export class Element<P> {
   type: string | FunctionComponent<P>;
   props: P | null;
-  children: any[];
+  children: Children[];
 
   constructor(
     type: Element<P>["type"],
