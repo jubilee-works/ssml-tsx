@@ -1,0 +1,35 @@
+{
+  "name": "ssml-tsx",
+  "version": "0.0.1",
+  "description": "SSML (Speech Synthesis Markup Language) JSX & TSX parser and renderer",
+  "repository": "https://github.com/jubilee-works/ssml-tsx",
+  "author": "Yusuke Fujiki <yusuke@fujikkys.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.25",
+    "jest": "24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "jsx", "json", "ts", "tsx"],
+    "transform": { "\\.(js|jsx|ts|tsx)$": "ts-jest" },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": ["**/__tests__/**/*.spec.(js|jsx|ts|tsx)"]
+  }
+}
