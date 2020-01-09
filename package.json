@@ -1,25 +1,8 @@
 {
   "name": "ssml-tsx",
-  "version": "0.0.2-0",
   "description": "SSML (Speech Synthesis Markup Language) JSX & TSX parser and renderer",
-  "repository": "https://github.com/jubilee-works/ssml-tsx",
+  "version": "0.0.2-alpha.1",
   "author": "Yusuke Fujiki <yusuke@fujikkys.com>",
-  "license": "MIT",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "clean": "rimraf dist",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "lint:tsc": "tsc --noEmit",
-    "lint:eslint": "eslint --cache 'src/**/*.{ts,tsx}'",
-    "lint": "run-p lint:*",
-    "formt": "prettier --write 'src/**/*.{ts,tsx}'",
-    "prepublishOnly": "run-s build"
-  },
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
@@ -35,24 +18,23 @@
     "ts-jest": "^24.3.0",
     "typescript": "^3.7.4"
   },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json",
-      "ts",
-      "tsx"
-    ],
-    "transform": {
-      "\\.(js|jsx|ts|tsx)$": "ts-jest"
-    },
-    "globals": {
-      "ts-jest": {
-        "tsConfig": "tsconfig.json"
-      }
-    },
-    "testMatch": [
-      "**/__tests__/**/*.spec.(ts|tsx)"
-    ]
+  "files": [
+    "dist/*.js",
+    "dist/*.d.ts"
+  ],
+  "homepage": "https://github.com/jubilee-works/ssml-tsx",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "https://github.com/jubilee-works/ssml-tsx",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "formt": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint --cache '**/*.{js,jsx,ts,tsx}'",
+    "lint:tsc": "tsc --noEmit",
+    "prepublishOnly": "run-s clean build",
+    "test": "jest",
+    "test:watch": "jest --watch"
   }
 }

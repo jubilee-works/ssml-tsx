@@ -1,22 +1,26 @@
 module.exports = {
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
-  ],
-  plugins: ["@typescript-eslint", "react"],
+  extends: ["eslint:recommended", "plugin:prettier/recommended"],
   env: { node: true },
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    sourceType: "module",
-    project: "./tsconfig.json"
-  },
-  rules: {
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-namespace": "off"
-  }
+  overrides: [
+    {
+      files: ["**/*.{ts,tsx}"],
+      extends: [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
+      ],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        sourceType: "module",
+        project: "./tsconfig.json"
+      },
+      plugins: ["@typescript-eslint", "react"],
+      rules: {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-namespace": "off"
+      }
+    }
+  ]
 };
