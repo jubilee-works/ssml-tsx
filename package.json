@@ -44,7 +44,6 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "cz": "npx git-cz",
     "formt": "prettier --write '**/*.{js,jsx,ts,tsx}'",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint --cache '**/*.{js,jsx,ts,tsx}'",
