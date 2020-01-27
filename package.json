@@ -3,18 +3,28 @@
   "description": "SSML (Speech Synthesis Markup Language) JSX & TSX parser and renderer",
   "version": "0.0.2-alpha.2",
   "author": "Yusuke Fujiki <yusuke@fujikkys.com>",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
+    "@semantic-release/changelog": "3.0.6",
+    "@semantic-release/git": "8.0.0",
     "@types/jest": "^24.0.25",
     "@typescript-eslint/eslint-plugin": "^2.15.0",
     "@typescript-eslint/parser": "^2.15.0",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.17.0",
+    "husky": "4.2.1",
     "jest": "24.9.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "rimraf": "^3.0.0",
+    "semantic-release": "16.0.3",
     "ts-jest": "^24.3.0",
     "typescript": "^3.7.4"
   },
@@ -23,6 +33,11 @@
     "dist/*.d.ts"
   ],
   "homepage": "https://github.com/jubilee-works/ssml-tsx",
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
+  },
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "https://github.com/jubilee-works/ssml-tsx",
@@ -34,6 +49,7 @@
     "lint:eslint": "eslint --cache '**/*.{js,jsx,ts,tsx}'",
     "lint:tsc": "tsc --noEmit",
     "prepublishOnly": "run-s clean build",
+    "release": "semantic-release",
     "test": "jest",
     "test:watch": "jest --watch"
   }
