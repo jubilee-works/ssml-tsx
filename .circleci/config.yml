@@ -1,0 +1,77 @@
+version: 2.1
+
+parameters:
+  is_release:
+    type: boolean
+    default: false
+
+executors:
+  default:
+    working_directory: ~/ssml-tsx
+    docker:
+      - image: circleci/node:12.14.1
+
+commands:
+  restore_dependencies:
+    steps:
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ arch }}-node12.14.1-{{ checksum "yarn.lock" }}
+            - v1-dependencies-{{ arch }}
+            - v1-dependencies-
+      - run:
+          name: Yarn
+          command: yarn
+  save_dependencies:
+    steps:
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ arch }}-node12.14.1-{{ checksum "yarn.lock" }}
+
+jobs:
+  test_job:
+    executor:
+      name: default
+    steps:
+      - checkout:
+          path: ~/ssml-tsx
+      - restore_dependencies
+      - save_dependencies
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Test
+          command: yarn test
+  release_job:
+    executor:
+      name: default
+    steps:
+      - checkout:
+          path: ~/ssml-tsx
+      - restore_dependencies
+      - save_dependencies
+      - run:
+          name: yarn release
+          command: yarn release
+
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - test_job:
+        filters:
+          branches:
+            ignore: master
+  release_workflow:
+    when: << pipeline.parameters.is_release >>
+    jobs:
+      - test_job:
+          filters:
+            branches:
+              only: master
+      - release_job:
+          context: release-timetree-sdk
+          requires:
+            - test_job
