@@ -1,7 +1,7 @@
 {
   "name": "ssml-tsx",
   "description": "SSML (Speech Synthesis Markup Language) JSX & TSX parser and renderer",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Yusuke Fujiki <yusuke@fujikkys.com>",
   "config": {
     "commitizen": {

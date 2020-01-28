@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.4...v1.0.5) (2020-01-28)
+
+
+### Bug Fixes
+
+* **ci:** fix build badge ([844df48](https://github.com/jubilee-works/ssml-tsx/commit/844df4863a08dfbda801f3bf7302344c108b40ed))
+
 ## [1.0.4](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.3...v1.0.4) (2020-01-28)
 
 
