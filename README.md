@@ -1,5 +1,6 @@
 # ssml-tsx
 [![Version](https://img.shields.io/npm/v/ssml-tsx.svg)](https://www.npmjs.com/package/ssml-tsx)
+[![CircleCI](https://circleci.com/gh/jubilee-works/ssml-tsx.svg?style=shield)](https://circleci.com/gh/jubilee-works/ssml-tsx)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 
 Write SSML (Speech Synthesis Markup Language) inline within JSX or TSX.
