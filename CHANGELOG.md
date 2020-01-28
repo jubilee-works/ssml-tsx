@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.6...v1.0.7) (2020-01-28)
+
+
+### Bug Fixes
+
+* **ci:** fix step dependencies ([b5cc482](https://github.com/jubilee-works/ssml-tsx/commit/b5cc482b4213844bf1dc2f7b8fad22fe49c124a0))
+
 ## [1.0.6](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.5...v1.0.6) (2020-01-28)
 
 
