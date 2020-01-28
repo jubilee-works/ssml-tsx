@@ -28,11 +28,6 @@ commands:
           key: v1-dependencies-{{ arch }}-node12.14.1-{{ checksum "yarn.lock" }}
 
 jobs:
-  noop:
-    executor:
-      name: default
-    steps:
-      - run: echo "this is noop"
   test:
     executor:
       name: default
@@ -68,16 +63,10 @@ workflows:
               ignore: master
   test_and_release:
     jobs:
-      - noop:
+      - test:
           filters:
             branches:
               only: master
-      - test:
-          requires:
-            - noop
-          filters:
-            tags:
-              ignore: /v.+/
       - slack/approval-notification:
           channel: CT64KG0MA
           context: release-timetree-sdk
