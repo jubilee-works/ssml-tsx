@@ -1,9 +1,7 @@
 version: 2.1
 
-parameters:
-  is_release:
-    type: boolean
-    default: false
+orbs:
+  slack: circleci/slack@3.4.2
 
 executors:
   default:
@@ -30,7 +28,7 @@ commands:
           key: v1-dependencies-{{ arch }}-node12.14.1-{{ checksum "yarn.lock" }}
 
 jobs:
-  test_job:
+  test:
     executor:
       name: default
     steps:
@@ -44,14 +42,13 @@ jobs:
       - run:
           name: Test
           command: yarn test
-  release_job:
+  release:
     executor:
       name: default
     steps:
       - checkout:
           path: ~/ssml-tsx
       - restore_dependencies
-      - save_dependencies
       - run:
           name: yarn release
           command: yarn release
@@ -60,18 +57,26 @@ workflows:
   version: 2
   test_workflow:
     jobs:
-      - test_job:
-        filters:
-          branches:
-            ignore: master
-  release_workflow:
-    when: << pipeline.parameters.is_release >>
+      - test:
+          filters:
+            branches:
+              ignore: master
+  test_and_release_workflow:
     jobs:
-      - test_job:
+      - test:
           filters:
             branches:
               only: master
-      - release_job:
+      - slack/approval-notification:
+          channel: CSS1S075Y
           context: release-timetree-sdk
           requires:
-            - test_job
+            - test
+      - release-approval:
+          type: approval
+          requires:
+            - slack/approval-notification
+      - release:
+          context: release-timetree-sdk
+          requires:
+            - release-approval
