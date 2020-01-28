@@ -28,6 +28,11 @@ commands:
           key: v1-dependencies-{{ arch }}-node12.14.1-{{ checksum "yarn.lock" }}
 
 jobs:
+  noop:
+    executor:
+      name: default
+    steps:
+      - run: echo "this is noop"
   test:
     executor:
       name: default
@@ -63,6 +68,10 @@ workflows:
               ignore: master
   test_and_release:
     jobs:
+      - noop:
+          filters:
+            tags:
+              ignore: /v.+/
       - test:
           filters:
             branches:
