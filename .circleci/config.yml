@@ -55,20 +55,24 @@ jobs:
 
 workflows:
   version: 2
-  test_workflow:
+  test:
     jobs:
       - test:
           filters:
             branches:
               ignore: master
-  test_and_release_workflow:
+            tags:
+              ignore: /^v.*/
+  test_and_release:
     jobs:
       - test:
           filters:
             branches:
               only: master
+            tags:
+              ignore: /^v.*/
       - slack/approval-notification:
-          channel: CSS1S075Y
+          channel: CT64KG0MA
           context: release-timetree-sdk
           requires:
             - test
