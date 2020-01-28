@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.2...v1.0.3) (2020-01-28)
+
+
+### Bug Fixes
+
+* **circleci:** fix build workflows ([4cdd53d](https://github.com/jubilee-works/ssml-tsx/commit/4cdd53d319d7b8b716288059a70d3f7aae0a750d))
+
 ## [1.0.2](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.1...v1.0.2) (2020-01-28)
 
 
