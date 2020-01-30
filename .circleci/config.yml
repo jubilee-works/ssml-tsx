@@ -68,7 +68,7 @@ workflows:
             branches:
               only: master
       - slack/approval-notification:
-          channel: CT64KG0MA
+          channel: ${SLACK_CHANNEL}
           context: release-timetree-sdk
           requires:
             - test
