@@ -4,6 +4,6 @@ export type FunctionComponentPropsBase = {
 
 export type FunctionComponent<P = {}> = (
   props: P & FunctionComponentPropsBase
-) => JSX.Element;
+) => JSX.Element | null;
 
 export type FC<P = {}> = FunctionComponent<P>;

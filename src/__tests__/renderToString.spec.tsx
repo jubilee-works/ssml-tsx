@@ -35,4 +35,9 @@ describe("renderToString", () => {
     );
     expect(`${jsx}`).toBe(`<say-as interpret-as="date">foo</say-as>`);
   });
+
+  test("should match empty string with null component", () => {
+    const NullComponent: FC = () => null;
+    expect(renderToString(<NullComponent />)).toBe("");
+  });
 });
