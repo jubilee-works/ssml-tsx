@@ -1,3 +1,10 @@
+## [1.0.8](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.7...v1.0.8) (2020-02-20)
+
+
+### Bug Fixes
+
+* **type:** allows return null for function component ([37b0ce7](https://github.com/jubilee-works/ssml-tsx/commit/37b0ce7827ff302d9d8f58563950253da0f804f6))
+
 ## [1.0.7](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.6...v1.0.7) (2020-01-28)
 
 
