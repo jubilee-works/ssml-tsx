@@ -1,5 +1,6 @@
 {
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base", "group:definitelyTyped"],
+  "prHourlyLimit": 12,
+  "postUpdateOptions": ["yarnDedupeHighest"],
+  "lockFileMaintenance": true
 }
