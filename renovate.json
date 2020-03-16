@@ -1,6 +1,4 @@
 {
-  "extends": ["config:base", "group:definitelyTyped"],
-  "prHourlyLimit": 12,
-  "postUpdateOptions": ["yarnDedupeHighest"],
-  "lockFileMaintenance": true
+  "extends": ["config:js-lib", "group:definitelyTyped", ":maintainLockFilesWeekly"],
+  "postUpdateOptions": ["yarnDedupeHighest"]
 }
