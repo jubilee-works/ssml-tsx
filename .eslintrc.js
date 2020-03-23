@@ -7,20 +7,20 @@ module.exports = {
       extends: [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint"
+        "prettier/@typescript-eslint",
       ],
       parser: "@typescript-eslint/parser",
       parserOptions: {
         sourceType: "module",
-        project: "./tsconfig.json"
+        project: "./tsconfig.json",
       },
       plugins: ["@typescript-eslint", "react"],
       rules: {
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-namespace": "off"
-      }
-    }
-  ]
+        "@typescript-eslint/no-namespace": "off",
+      },
+    },
+  ],
 };
