@@ -55,6 +55,9 @@
     "prepublishOnly": "run-s clean build",
     "release": "semantic-release",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "format:eslint": "yarn lint:eslint --fix",
+    "format:prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
+    "format": "run-s format:*"
   }
 }
