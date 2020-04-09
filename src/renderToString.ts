@@ -29,6 +29,12 @@ const toAttr = <P>(props: Element<P>["props"]): string =>
         .map(([name, value]) => `${name}="${value}"`)
         .join(" ")
     : "";
+const convertElementType = (type: string): string => {
+  if (/^amazon/.test(type)) {
+    return type.split('-').join(':')
+  }
+  return type
+}
 
 const render = (element: Children | Children[] | null): string => {
   if (!element) return "";
@@ -43,9 +49,10 @@ const render = (element: Children | Children[] | null): string => {
       return render(element.type(element.props));
     }
     const attr = toAttr(element.props);
+    const type = convertElementType(element.type)
     return children
-      ? `<${element.type}${attr}>${children}</${element.type}>`
-      : `<${element.type}${attr}/>`;
+      ? `<${type}${attr}>${children}</${type}>`
+      : `<${type}${attr}/>`;
   }
 
   return escape(element);
