@@ -57,6 +57,25 @@ const Foo: FC<{ name: string }> = ({ name }) => (
 console.log(renderToString(<Foo name="bar" />));
 ```
 
+## Supported tags
+
+- `<amazon-domain />` (amazon:domain)
+- `<amazon-effect />` (amazon:effect)
+- `<amazon-emotion />` (amazon:emotion)
+- `<audio />`
+- `<break />`
+- `<emphasis />`
+- `<lang />`
+- `<p />`
+- `<phoneme />`
+- `<prosody />`
+- `<s />`
+- `<say-as />`
+- `<speak />`
+- `<sub />`
+- `<voice />`
+- `<w />`
+
 ## Using with eslint
 
 Use [`eslint-pllugin-react`](https://github.com/yannickcr/eslint-plugin-react) to make lint work correctly.
