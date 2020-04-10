@@ -36,6 +36,21 @@ describe("renderToString", () => {
     expect(`${jsx}`).toBe(`<say-as interpret-as="date">foo</say-as>`);
   });
 
+  test("should convert amazon tag", () => {
+    const AmazonComponents: FC = () => (
+      <speak>
+        <amazon-effect name="whispered">effect</amazon-effect>
+        <amazon-emotion name="excited" intensity="low">
+          emotion
+        </amazon-emotion>
+        <amazon-domain name="news">domain</amazon-domain>
+      </speak>
+    );
+    expect(renderToString(<AmazonComponents />)).toBe(
+      `<speak><amazon:effect name="whispered">effect</amazon:effect><amazon:emotion name="excited" intensity="low">emotion</amazon:emotion><amazon:domain name="news">domain</amazon:domain></speak>`
+    );
+  });
+
   test("should match empty string with null component", () => {
     const NullComponent: FC = () => null;
     expect(renderToString(<NullComponent />)).toBe("");

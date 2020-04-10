@@ -12,15 +12,15 @@ declare global {
     type IntrinsicElements = {
       // https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html
 
-      "amazon:domain": ElementWithChildren<{
+      "amazon-domain": ElementWithChildren<{
         name: "music" | "news";
       }>;
 
-      "amazon:effect": ElementWithChildren<{
+      "amazon-effect": ElementWithChildren<{
         name: "whispered";
       }>;
 
-      "amazon:emotion": ElementWithChildren<{
+      "amazon-emotion": ElementWithChildren<{
         name: "excited" | "disappointed";
         intensity: "low" | "medium" | "high";
       }>;
