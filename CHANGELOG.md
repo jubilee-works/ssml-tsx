@@ -1,3 +1,11 @@
+## [1.0.9](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.8...v1.0.9) (2020-04-10)
+
+
+### Bug Fixes
+
+* lint error ([2bcc838](https://github.com/jubilee-works/ssml-tsx/commit/2bcc838d43637b6d19127b1d4054287c24f2e6c5))
+* rename amazon:XXX tag ([e1c6292](https://github.com/jubilee-works/ssml-tsx/commit/e1c62922d1fec95dbd6f2d06bd7920f7ff8db7a6))
+
 ## [1.0.8](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.7...v1.0.8) (2020-02-20)
 
 
