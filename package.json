@@ -8,6 +8,11 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "keywords": [
+    "ssml",
+    "jsx",
+    "vui"
+  ],
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/commit-analyzer": "8.0.1",
