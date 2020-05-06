@@ -1,10 +1,4 @@
 {
   "extends": ["config:js-lib", "group:definitelyTyped", ":maintainLockFilesWeekly"],
-  "postUpdateOptions": ["yarnDedupeHighest"],
-  "packageRules": [
-    {
-      "groupName": "nodejs",
-      "packageNames": ["circleci/node", "node"]
-    }
-  ]
+  "postUpdateOptions": ["yarnDedupeHighest"]
 }
