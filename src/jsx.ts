@@ -48,7 +48,7 @@ declare global {
         "xml:lang": string;
       }>;
 
-      p: ElementWithChildren<{}>;
+      p: ElementWithChildren<unknown>;
 
       phoneme: ElementWithChildren<{
         alphabet: "ipa" | "x-sampa";
@@ -68,7 +68,7 @@ declare global {
           | string;
       }>;
 
-      s: ElementWithChildren<{}>;
+      s: ElementWithChildren<unknown>;
 
       "say-as": ElementWithChildren<{
         "interpret-as":
@@ -100,7 +100,7 @@ declare global {
           | "y";
       }>;
 
-      speak: ElementWithChildren<{}>;
+      speak: ElementWithChildren<unknown>;
 
       sub: ElementWithChildren<{
         alias: string;
