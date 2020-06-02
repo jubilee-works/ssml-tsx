@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.9...v1.0.10) (2020-06-02)
+
+
+### Bug Fixes
+
+* **type:** improve generic types ([8d4374b](https://github.com/jubilee-works/ssml-tsx/commit/8d4374b9e099bf9c20e25f17326e6943ef53a3be))
+
 ## [1.0.9](https://github.com/jubilee-works/ssml-tsx/compare/v1.0.8...v1.0.9) (2020-04-10)
 
 
