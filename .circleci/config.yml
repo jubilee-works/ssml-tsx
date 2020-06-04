@@ -7,7 +7,7 @@ executors:
   default:
     working_directory: ~/ssml-tsx
     docker:
-      - image: circleci/node:12.17.0
+      - image: circleci/node:12.18.0
 
 commands:
   restore_dependencies:
