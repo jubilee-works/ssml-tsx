@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  slack: circleci/slack@3.4.2
+  slack: circleci/slack@4.1.1
 
 executors:
   default:
@@ -67,7 +67,7 @@ workflows:
           filters:
             branches:
               only: master
-      - slack/approval-notification:
+      - slack/on-hold:
           channel: ${SLACK_CHANNEL}
           context: release-timetree-sdk
           requires:
@@ -75,7 +75,7 @@ workflows:
       - release-approval:
           type: approval
           requires:
-            - slack/approval-notification
+            - slack/on-hold
       - release:
           context: release-timetree-sdk
           requires:
