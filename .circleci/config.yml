@@ -67,7 +67,7 @@ workflows:
           filters:
             branches:
               only: master
-      - slack/approval-notification:
+      - slack/on-hold:
           channel: ${SLACK_CHANNEL}
           context: release-timetree-sdk
           requires:
@@ -75,7 +75,7 @@ workflows:
       - release-approval:
           type: approval
           requires:
-            - slack/approval-notification
+            - slack/on-hold
       - release:
           context: release-timetree-sdk
           requires:
