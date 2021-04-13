@@ -7,7 +7,7 @@ executors:
   default:
     working_directory: ~/ssml-tsx
     docker:
-      - image: cimg/node:14.16.0
+      - image: cimg/node:14.16.1
 
 commands:
   restore_dependencies:
