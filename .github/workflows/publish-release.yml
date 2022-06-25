@@ -14,7 +14,7 @@ jobs:
           cache: yarn
       - run: yarn install --frozen-lockfile --prefer-offline
       - run: yarn release
-        with:
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - uses: 8398a7/action-slack@v3
