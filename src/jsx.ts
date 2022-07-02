@@ -10,10 +10,12 @@ declare global {
     };
 
     interface IntrinsicElements {
+      // References:
       // https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html
+      // https://developers.google.com/assistant/df-asdk/ssml
 
       "amazon-domain": ElementWithChildren<{
-        name: "music" | "news";
+        name: "conversational" | "long-form" | "music" | "news" | "fun";
       }>;
 
       "amazon-effect": ElementWithChildren<{
@@ -27,7 +29,15 @@ declare global {
 
       audio: ElementWithChildren<{
         src: string;
+        clipBegin?: string;
+        clipEnd?: string;
+        speed?: string;
+        repeatCount?: string;
+        repeatDur?: string;
+        soundLevel?: string;
       }>;
+
+      desc: ElementWithChildren<{}>;
 
       break: ElementWithChildren<{
         strength?:
@@ -41,14 +51,14 @@ declare global {
       }>;
 
       emphasis: ElementWithChildren<{
-        level?: "strong" | "moderate" | "reduced";
+        level?: "strong" | "moderate" | "none" | "reduced";
       }>;
 
       lang: ElementWithChildren<{
         "xml:lang": string;
       }>;
 
-      p: ElementWithChildren<unknown>;
+      p: ElementWithChildren<{}>;
 
       phoneme: ElementWithChildren<{
         alphabet: "ipa" | "x-sampa";
@@ -56,8 +66,9 @@ declare global {
       }>;
 
       prosody: ElementWithChildren<{
-        rate?: "x-slow" | "slow" | "medium" | "fast" | "x-fast" | string;
-        pitch?: "x-low" | "low" | "medium" | "high" | "x-high" | string;
+        name?: string;
+        rate?: "x-slow" | "slow" | "medium" | "fast" | "x-fast" | (string & {});
+        pitch?: "x-low" | "low" | "medium" | "high" | "x-high" | (string & {});
         volume?:
           | "silent"
           | "x-soft"
@@ -65,10 +76,10 @@ declare global {
           | "medium"
           | "loud"
           | "x-loud"
-          | string;
+          | (string & {});
       }>;
 
-      s: ElementWithChildren<unknown>;
+      s: ElementWithChildren<{}>;
 
       "say-as": ElementWithChildren<{
         "interpret-as":
@@ -85,8 +96,10 @@ declare global {
           | "telephone"
           | "address"
           | "interjection"
-          | "expletive";
-
+          | "expletive"
+          | "bleep"
+          | "currency"
+          | "verbatim";
         format?:
           | "mdy"
           | "dmy"
@@ -98,9 +111,10 @@ declare global {
           | "d"
           | "m"
           | "y";
+        detail?: "1" | "2";
       }>;
 
-      speak: ElementWithChildren<unknown>;
+      speak: ElementWithChildren<{}>;
 
       sub: ElementWithChildren<{
         alias: string;
@@ -112,6 +126,25 @@ declare global {
 
       w: ElementWithChildren<{
         role: "amazon:VB" | "amazon:VBD" | "amazon:NN" | "amazon:SENSE_1";
+      }>;
+
+      mark: ElementWithChildren<{
+        name: string;
+      }>;
+
+      par: ElementWithChildren<{}>;
+
+      seq: ElementWithChildren<{}>;
+
+      media: ElementWithChildren<{
+        "xml:id"?: string;
+        begin: string;
+        end: string;
+        repeatCount: string;
+        repeatDur: string;
+        soundLevel: string;
+        fadeInDur: string;
+        fadeOutDur: string;
       }>;
     }
   }
