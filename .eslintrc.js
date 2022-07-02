@@ -1,5 +1,6 @@
 module.exports = {
   extends: ["timetree/react"],
+  settings: { react: { version: "18" } },
   rules: {
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/no-empty-interface": "off",
