@@ -1,15 +1,15 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { Element as _Element, Children } from "./Element";
+/* eslint-disable @typescript-eslint/no-namespace */
+import { Children, Element as _Element } from "./Element";
 
 declare global {
   namespace JSX {
-    type Element<P = any> = _Element<P>;
+    interface Element<P = any> extends _Element<P> {}
 
     type ElementWithChildren<P> = P & {
       children?: Children[];
     };
 
-    type IntrinsicElements = {
+    interface IntrinsicElements {
       // https://developer.amazon.com/ja-JP/docs/alexa/custom-skills/speech-synthesis-markup-language-ssml-reference.html
 
       "amazon-domain": ElementWithChildren<{
@@ -113,6 +113,7 @@ declare global {
       w: ElementWithChildren<{
         role: "amazon:VB" | "amazon:VBD" | "amazon:NN" | "amazon:SENSE_1";
       }>;
-    };
+    }
   }
 }
+/* eslint-enable @typescript-eslint/no-namespace */

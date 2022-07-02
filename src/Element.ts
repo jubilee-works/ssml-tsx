@@ -1,5 +1,5 @@
-import { renderToString } from "./renderToString";
 import { FunctionComponent } from "./Component";
+import { renderToString } from "./renderToString";
 
 export type Children = Element<any> | string | number | boolean;
 

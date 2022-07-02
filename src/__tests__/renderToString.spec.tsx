@@ -1,5 +1,5 @@
 /** @jsx ssml */
-import ssml, { renderToString, FC } from "..";
+import ssml, { FC, renderToString } from "..";
 
 describe("renderToString", () => {
   const Foo: FC<{ name: string }> = ({ name }) => (

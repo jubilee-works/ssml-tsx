@@ -1,6 +1,6 @@
-import { renderToString } from "./renderToString";
 import { createElement } from "./createElement";
 import { Element } from "./Element";
+import { renderToString } from "./renderToString";
 
 export * from "./renderToString";
 export * from "./createElement";
@@ -13,7 +13,9 @@ const ssml = <P>(
   props: Element<P>["props"],
   ...children: Element<P>["children"]
 ): Element<P> => createElement<P>(type, props, ...children);
+/* eslint-disable functional/immutable-data */
 ssml.renderToString = renderToString;
 ssml.createElement = createElement;
+/* eslint-enable functional/immutable-data */
 
 export default ssml;

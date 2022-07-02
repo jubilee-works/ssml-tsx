@@ -1,4 +1,4 @@
-import { Element, Children } from "./Element";
+import { Children, Element } from "./Element";
 
 const ranges = [
   "\ud83c[\udf00-\udfff]", // U+1F300 to U+1F3FF
