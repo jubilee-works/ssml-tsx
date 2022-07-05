@@ -35,7 +35,8 @@
   },
   "files": [
     "dist/*.js",
-    "dist/*.d.ts"
+    "dist/*.d.ts",
+    "!dist/__tests__"
   ],
   "homepage": "https://github.com/jubilee-works/ssml-tsx",
   "husky": {
