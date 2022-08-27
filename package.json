@@ -22,7 +22,7 @@
     "@semantic-release/release-notes-generator": "10.0.3",
     "@types/jest": "28.1.8",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.22.0",
+    "eslint": "8.23.0",
     "eslint-config-timetree": "1.7.3",
     "husky": "8.0.1",
     "jest": "29.0.1",
