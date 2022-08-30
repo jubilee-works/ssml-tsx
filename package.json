@@ -20,7 +20,7 @@
     "@semantic-release/github": "8.0.6",
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/jest": "28.1.8",
+    "@types/jest": "29.0.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.23.0",
     "eslint-config-timetree": "1.7.3",
